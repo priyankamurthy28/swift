@@ -1,2 +1,2 @@
 # swift
-Swift practive
+Swift practice
