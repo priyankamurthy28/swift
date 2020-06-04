@@ -1,0 +1,61 @@
+//
+//  ViewController.swift
+//  filterGreaterThanValue
+//
+//  Created by Priyanka K on 04/06/20.
+//  Copyright © 2020 Priyanka K. All rights reserved.
+//
+
+import UIKit
+
+class ViewController: UIViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+//        let numbers = filterGreaterThanValue(numbers: [5,6,7,8,9], value: 4)
+//        print(numbers)
+        
+        
+//       let numbers = filteredArrayWithPredicate(closure: { (num) -> Bool in
+//            return num > 5
+//        }, numbers: [1,5,8,10,20])
+//
+//        print(numbers)
+//
+//        let numbers1 = filteredArrayWithPredicate(closure: { return $0 < 5
+//        }, numbers: [1,5,8,10,20])
+//
+//        print(numbers1)
+        
+        
+let number3 = filteredArrayWithPredicate(closure: greaterThanThree, numbers: [5,6,7,8,9])
+        print(number3)
+    }
+    
+    
+    func filterGreaterThanValue(numbers:[Int],value:Int) -> [Int] {
+        var numArray: [Int] = []
+        for num in numbers {
+
+            if num > value {
+                numArray.append(num)
+            }
+        }
+        return  numArray
+    }
+    
+    func filteredArrayWithPredicate(closure:(Int) -> Bool,numbers:[Int]) -> [Int] {
+        var filteredArray:[Int] = []
+        for num in numbers {
+            if closure(num) {
+                filteredArray.append(num)
+            }
+        }
+        return filteredArray
+    }
+    func greaterThanThree(value:Int) -> Bool {
+        return value > 3
+    }
+}
+
